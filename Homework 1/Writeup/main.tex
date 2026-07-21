@@ -1,0 +1,85 @@
+% Preamble - - - -
+\documentclass[12pt]{article}
+% Variables - - - -
+\def\course{QSS 20}
+\def\assignment{Homework 1}
+\def\byline{Written Interpretation}
+\def\me{Roshan Karim}
+\ifx\byline\empty
+\def\subject{\course}
+\else \def\subject{\course: \byline}
+\fi
+% - - - - Variables
+% Commands - - - -
+\newcommand{\opscale}[2]{\xrightarrow{#1r_#2 \text{→ } r_#2}}
+\newcommand{\opreplace}[3]{\xrightarrow{r_#1 #2r_#3 \text{→ } r_#1}}
+\newcommand{\opitc}[2]{\xrightarrow{r_#1 \text{↔} r_#2}}
+% - - - - Commands
+% Default Packages - - - -
+\usepackage[letterpaper, total={6.5in, 9in}]{geometry}
+\usepackage{fancyhdr}
+\setlength{\headheight}{16pt}
+\usepackage{titling}
+% \usepackage{citation-style-language}
+% \cslsetup{style = american-sociological-association}
+% \addbibresource{references.json}
+% \addbibresource{references.bib}
+\usepackage[pdftitle={\assignment},
+    pdfsubject={\subject},
+    pdfauthor={\me},
+    pdfproducer={LaTeX},
+    pdfcreator={LuaLaTeX},
+    colorlinks,
+    citecolor=blue,
+urlcolor=blue]{hyperref}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage{parskip}
+\usepackage[all]{nowidow}
+% - - - - Default Packages
+% Unique Packages - - - -
+\usepackage{amsmath}
+\usepackage{txfonts}
+\usepackage{fontspec}
+\setmainfont{Charis SIL}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+% - - - - Unique Packages
+% Header - - - -
+\pagestyle{fancy}
+\lhead{\course: \assignment}
+\chead{\me}
+\rhead{\today}
+% - - - - Header
+% - - - - Preamble
+\begin{document}
+% Title - - - -
+\begingroup
+\centering
+\ifx\byline\empty
+\LARGE\assignment\\[.5em]
+\else\LARGE\assignment\\\large\byline\\[0.5em]
+\fi
+\endgroup
+% - - - - Title
+% Content - - - -
+\section{Findings}
+The analysis found substantial racial disparities in incarceration rates across racial groups.
+Most significantly, the analysis found that Black defendants were incarcerated at by far the highest rate of 55.5\%.
+White, Hispanic, and other race defendants were incarcerated at rates ranging from 34.2\% to 37.8\%, which is not a large difference.
+Thus, the analysis suggests that the racial disparities in incarceration rates, in this case, appear to most significant affect Black defendants.
+\section{Possible Confounders}
+UPDATED\_OFFENSE\_CATEGORY could be a confounder because different offense types often receive different sentencing outcomes, with some offenses being more likely to result in incarceration than others. 
+If the distribution of offense types also differs across racial groups, then part of the observed gap in incarceration rates could be explained by differences in the types of offenses for which defendants were charged.
+\section{Next Steps}
+I would first classify each charge by DISPOSITION\_CHARGED\_CLASS (for example, felony versus misdemeanor obtained by grouping the class codes into the two overarching categories) and compare the distribution of charge severity across racial groups. 
+Next, I would calculate incarceration rates separately within each charge class for each racial group. 
+If the racial gap becomes much smaller after comparing defendants charged with offenses of similar severity, then differences in felony versus misdemeanor charges may explain part of the overall disparity. 
+If the gap remains within each charge class, it would suggest that charge severity alone does not fully account for the observed differences.
+\section{AI Use}
+I did not use generative AI in this analysis (with the exception of Supermaven line-level autocomplete which I have installed in my IDE).
+This was not due to any sort of real choice, but rather because the analysis was relatively simple and faster to simply complete myself.
+% - - - - Content
+\end{document}

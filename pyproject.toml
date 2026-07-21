@@ -1,0 +1,14 @@
+[project]
+name = "qss20"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ipykernel>=7.3.0",
+    "numpy>=2.5.0",
+    "pandas>=3.0.3",
+    "pip>=26.1.2",
+    "plotnine>=0.15.7",
+    "seaborn>=0.13.2",
+]
